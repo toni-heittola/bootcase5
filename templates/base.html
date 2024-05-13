@@ -110,6 +110,12 @@
 {% if 'footer' in THEME_SETTINGS and 'show' in THEME_SETTINGS['footer'] and THEME_SETTINGS['footer']['show'] %}
 {% include 'includes/footer.html' %}
 {% endif %}
+
+
+
+
+{% if 0 %}
+
 {% if 'assets' in THEME_SETTINGS and 'colorbox' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['colorbox'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/colorbox/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.colorbox.js"></script>
@@ -152,5 +158,6 @@
 {% endfor %}{% endif %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/theme5.js"></script>
 {% include 'includes/google_analytics.html' %}
+{% endif %}
 </body>
 </html>
