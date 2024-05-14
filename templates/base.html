@@ -110,12 +110,18 @@
 {% if 'footer' in THEME_SETTINGS and 'show' in THEME_SETTINGS['footer'] and THEME_SETTINGS['footer']['show'] %}
 {% include 'includes/footer.html' %}
 {% endif %}
+
+<script type="text/javascript" src="{{ SITEURL }}/theme/assets/jquery/jquery.easing.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/assets/bootstrap5/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/theme5.js"></script>
+
+{% if 0 %}
+
 {% if 'assets' in THEME_SETTINGS and 'colorbox' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['colorbox'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/colorbox/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.colorbox.js"></script>
 {% endif %}
-<script type="text/javascript" src="{{ SITEURL }}/theme/assets/jquery/jquery.easing.min.js"></script>
-<script type="text/javascript" src="{{ SITEURL }}/theme/assets/bootstrap5/js/bootstrap.min.js"></script>
+
 {% if 'assets' in THEME_SETTINGS and 'scrollreveal' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['scrollreveal'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/scrollreveal/scrollreveal.min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.scrollreveal.js"></script>
@@ -150,7 +156,8 @@
 {% if page and page.scripts %}{% for script in page.scripts %}
 {{ script }}
 {% endfor %}{% endif %}
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/theme5.js"></script>
+
 {% include 'includes/google_analytics.html' %}
+{% endif %}
 </body>
 </html>

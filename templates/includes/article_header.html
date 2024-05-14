@@ -78,8 +78,8 @@
 <header class="article-top" {% if header_image %}style="background-image: url({{header_image}});box-shadow: 0px 1000px {{header_bg_tint}} inset;overflow:hidden;position:relative"{% endif %}>
     <div class="container" style="height:100%;">
         <div class="row" style="height:100%;">
-            <div class="col-md-offset-2 col-md-8 b20" style="height:100%;{{overlay_css}}">
-                <div class="page-heading {{pageheadingclass}} {% if header_text_align == "right" -%}text-right{%- elif header_text_align == "center"-%}text-center{%- endif -%}" style="height:100%;">
+            <div class="offset-md-2 col-md-8 b20" style="height:100%;{{overlay_css}}">
+                <div class="page-heading {{pageheadingclass}} {% if header_text_align == "right" -%}text-end{%- elif header_text_align == "center"-%}text-center{%- endif -%}" style="height:100%;">
                     {%- if header_overlay -%}
                     <div class="pull-right">
                         {%- if '.svg' in header_overlay -%}
@@ -94,7 +94,7 @@
                     <hr class="small {% if header_text_align == "right" -%}right{%- elif header_text_align == "center"-%}center{%- endif %} {% if header_text_style == "bold" -%}bold{%- elif header_text_style == "thin"-%}thin{%- endif -%}">
                     <span class="subheading">{{ article.headertext }}</span>
                     {% endif %}
-                    <div class="text-muted2 pull-left">
+                    <div class="text-muted2 float-start">
                         <small>
                             <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
                             {%- if 'article' in THEME_SETTINGS and 'show_author' in THEME_SETTINGS['article'] and THEME_SETTINGS['article']['show_author'] -%}
@@ -103,12 +103,12 @@
                         </small>
                     </div>
                     {%- if 'article' in THEME_SETTINGS and 'show_category' in THEME_SETTINGS['article'] and THEME_SETTINGS['article']['show_category'] -%}
-                    <div class="text-muted2 pull-right">
+                    <div class="text-muted2 float-end">
                         <small>
                         {%- if category_data and 'label_css' in category_data -%}
                         <span class="{{category_data['label_css']}}">
                         {%- else -%}
-                        <span class="label label-default">
+                        <span class="badge bg-secondary">
                         {%- endif -%}
                         {{ article.category }}
                         </span>

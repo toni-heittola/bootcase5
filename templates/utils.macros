@@ -1,4 +1,4 @@
-{% macro menu_item_processor(item_dict, current_page='', current_title='',site_url='', sub_site='') -%}
+{% macro menu_item_processor(item_dict, current_page=None, current_title=None, site_url=None, sub_site=None, dropdown=False) -%}
 
     {%- if 'url' in item_dict -%}
         {%- if 'http://' in item_dict['url'] or 'https://' in item_dict['url'] -%}
@@ -81,26 +81,40 @@
     <li class="nav-item divider" role="presentation"></li>
 
     {%- elif 'header' in item_dict and item_dict['header'] -%}
-    <li class="nav-link disabled subheader" {% if tooltip %} data-toggle="tooltip" data-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
+    <li class="nav-link disabled subheader" {% if tooltip %} data-bs-toggle="tooltip" data-bs-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
        <a>{{title}}</a>
     </li>
 
     {%- elif 'logo' in item_dict and item_dict['logo'] and img -%}
-    <li class="nav-item {{ active_menu(url=url, current_page=current_page) }}{{ item_css }}"{% if tooltip %} data-toggle="tooltip" data-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
-       {{ menu_link(url=url, img=img, link_target=link_target) }}
+    <li class="nav-item {{ active_menu(url=url, current_page=current_page) }}{{ item_css }}"{% if tooltip %} data-bs-toggle="tooltip" data-bs-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
+       {{ menu_link(
+            url=url,
+            img=img,
+            link_target=link_target) }}
     </li>
 
     {%- elif 'dropdown' not in item_dict -%}
-    <li class="nav-item {{ active_menu(url=url, current_page=current_page, sub_site_fetching=sub_site_fetching, sub_site=sub_site) }}{{ item_css }}"{% if tooltip %} data-toggle="tooltip" data-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
-        {{ menu_link(url=url, title=title, link_target=link_target, icon=icon) }}
+    <li class="{% if not dropdown %}nav-item{%endif%} {{ active_menu(url=url, current_page=current_page, sub_site_fetching=sub_site_fetching, sub_site=sub_site) }}{{ item_css }}"{% if tooltip %} data-bs-toggle="tooltip" data-bs-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
+        {{ menu_link(
+            url=url,
+            title=title,
+            link_target=link_target,
+            icon=icon,
+            dropdown_item=dropdown) }}
     </li>
 
     {%- else -%}
-    <li class="btn-group {{active_menu(url=item_dict['dropdown'], current_page=current_page)}}{{item_css}}"{% if tooltip %} data-toggle="tooltip" data-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
+    <li class="nav-item dropdown {{active_menu(url=item_dict['dropdown'], current_page=current_page)}}{{item_css}}"{% if tooltip %} data-bs-toggle="tooltip" data-bs-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
         {{ menu_link(url=url, title=title, link_target=link_target, icon=icon, dropdown=true) }}
         <ul class="dropdown-menu" role="menu">
         {% for sub_menu_dict in item_dict['dropdown'] %}
-            {{ menu_item_processor(item_dict=sub_menu_dict, current_page=current_page, current_title=current_title, site_url=site_url, sub_site=sub_site) }}
+            {{ menu_item_processor(
+                item_dict=sub_menu_dict,
+                current_page=current_page,
+                current_title=current_title,
+                site_url=site_url,
+                sub_site=sub_site,
+                dropdown=True) }}
         {% endfor %}
         </ul>
     </li>
@@ -123,9 +137,16 @@
     {%- endif -%}
 {%- endmacro %}
 
-{% macro menu_link(url='', title='', img='', link_target='', icon='', dropdown=false) -%}
+{% macro menu_link(url=None, title=None, img=None, link_target=None, icon=None, dropdown=False, dropdown_item=False, class=None) -%}
     {%- if url or dropdown -%}
-        <a href="{% if url %}{{url}}{% else %}#{% endif %}"{% if link_target %} target="{{link_target}}" {% endif %}{% if dropdown %} class="nav-link dropdown-toggle" data-toggle="dropdown"{% else %}class="nav-link"{% endif %}>
+        <a href="{% if url %}{{url}}{% else %}#{% endif %}"
+        {% if link_target %} target="{{link_target}}" {% endif %}
+        {% if dropdown %} class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+        {% elif dropdown_item %} class="dropdown-item"
+        {% else %}
+        class="nav-link"
+        {% endif %}
+        >
         {%- endif -%}
             {%- if img -%}<img class="img img-responsive" src="{{img}}"/>{%- endif -%}
             {%- if icon -%}<i class="{{icon}}"></i>&nbsp;{%- endif -%}
