@@ -96,7 +96,7 @@
                         {%- endif -%}
                     </div>
                     {%- endif -%}
-                    <h1 class="{% if header_text_style == "bold" -%}bold{%- elif header_text_style == "thin"-%}thin{%- endif -%}">{{page.title}}</h1>
+                    <h1 class="toc-skip {% if header_text_style == "bold" -%}bold{%- elif header_text_style == "thin"-%}thin{%- endif -%}" data-toc-skip>{{page.title}}</h1>
                     {%- if page.headertext -%}
                         {%- if not page.headertextsecondary -%}
                             <hr class="small {% if header_text_align == "right" -%}right{%- elif header_text_align == "center"-%}center{%- endif %} {% if header_text_style == "bold" -%}bold{%- elif header_text_style == "thin"-%}thin{%- endif -%}">
