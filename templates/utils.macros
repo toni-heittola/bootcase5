@@ -1,5 +1,4 @@
 {% macro menu_item_processor(item_dict, current_page=None, current_title=None, site_url=None, sub_site=None, dropdown=False) -%}
-
     {%- if 'url' in item_dict -%}
         {%- if 'http://' in item_dict['url'] or 'https://' in item_dict['url'] -%}
             {%- set link_target = "_blank" -%}
@@ -123,7 +122,7 @@
 
 {% macro active_menu(url='', current_page='', sub_site_fetching='', sub_site='') -%}
     {%- if url is string -%}
-        {%- if url == current_page or url == '/' + current_page -%}
+        {%- if url == current_page or url == '/' + current_page or url + '/' == '/' + current_page -%}
         {{- ' active' -}}
         {%- elif sub_site_fetching and sub_site and sub_site == sub_site_fetching -%}
         {{- ' active' -}}
