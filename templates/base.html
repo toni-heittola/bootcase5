@@ -6,158 +6,199 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if 'site' in THEME_SETTINGS and 'favicon' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['favicon'] %}
+
+    {%- if 'site' in THEME_SETTINGS and 'favicon' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['favicon'] %}
     <link href="{{ SITEURL }}/{{ THEME_SETTINGS['site']['favicon'] }}" rel="icon">
-    {% endif %}
-    {% if 'site' in THEME_SETTINGS and 'favicon_ie' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['favicon_ie'] %}
+    {% endif -%}
+
+    {%- if 'site' in THEME_SETTINGS and 'favicon_ie' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['favicon_ie'] %}
     <!--[if IE]><link rel="shortcut icon" href="{{ SITEURL }}/{{ THEME_SETTINGS['site']['favicon_ie'] }}"><![endif]-->
-    {% endif %}
-    {% if 'site' in THEME_SETTINGS and 'apple_touch_icon' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['apple_touch_icon'] %}
+    {% endif -%}
+
+    {%- if 'site' in THEME_SETTINGS and 'apple_touch_icon' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['apple_touch_icon'] %}
     <link rel="apple-touch-icon" href="{{ SITEURL }}/{{ THEME_SETTINGS['site']['apple_touch_icon'] }}">
-    {% endif %}
-    {% block canonical_rel %}
-    {% endblock %}
-    {% block meta %}
-    <meta name="author" content="{{ AUTHOR }}" />
-    {% endblock %}
-    {% if 'site' in THEME_SETTINGS and 'web_fonts' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['web_fonts'] %}
+    {% endif -%}
+
+    {%- block canonical_rel %}{% endblock -%}
+    {%- block meta %}<meta name="author" content="{{ AUTHOR }}" />{% endblock -%}
+
+    {%- if 'site' in THEME_SETTINGS and 'web_fonts' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['web_fonts'] %}
     <link href="{{ THEME_SETTINGS['site']['web_fonts'] }}" rel="stylesheet">
-    {% endif %}
-    {% if 'site' in THEME_SETTINGS and 'bootstrap_theme' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['bootstrap_theme'] %}
+    {% endif -%}
+
+    {%- if 'site' in THEME_SETTINGS and 'bootstrap_theme' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['bootstrap_theme'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/bootstrap5/css/bootstrap.{{ THEME_SETTINGS['site']['bootstrap_theme'] }}.min.css" rel="stylesheet" type="text/css"/>
     {% else %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/bootstrap5/css/bootstrap.min.css" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'fontawesome' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fontawesome'] %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'fontawesome' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fontawesome'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/font-awesome/css/font-awesome.min.css" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'academicons' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['academicons'] %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'academicons' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['academicons'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/academicons/css/academicons.min.css" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'dcaseicons' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['dcaseicons'] %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'dcaseicons' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['dcaseicons'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/dcaseicons/css/dcaseicons.css?v=1.1" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'colorbox' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['colorbox'] %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'colorbox' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['colorbox'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/colorbox/css/colorbox.css" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'fullpage' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fullpage'] %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'fullpage' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fullpage'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/fullpage/jquery.fullpage.min.css" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'pygments' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['pygments'] %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'pygments' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['pygments'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" type="text/css"/>
-    {% endif %}
-    {% if 'assets' in THEME_SETTINGS and 'highlight' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['highlight'] %}
-        {% if 'highlight_theme' in THEME_SETTINGS %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/highlight/styles/{{THEME_SETTINGS['highlight_theme']}}.css" type="text/css"/>
-        {% else %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/highlight/styles/default.css" type="text/css"/>
-        {% endif %}
-    {% endif %}
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'highlight' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['highlight'] -%}
+        {%- if 'highlight_theme' in THEME_SETTINGS -%}
+            <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/highlight/styles/{{THEME_SETTINGS['highlight_theme']}}.css" type="text/css"/>
+        {%- else -%}
+            <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/highlight/styles/default.css" type="text/css"/>
+        {%- endif -%}
+    {%- endif %}
+
     {% if article %}
-    {% if article.css %}
-    <link rel="stylesheet" href="{{ article.css }}" type="text/css"/>
-    {% endif %}
-    {% if article.styles %}{% for style in article.styles %}
-    {{ style }}
-    {% endfor %}{% endif %}
-    {% endif %}
+        {% if article.css %}
+            <link rel="stylesheet" href="{{ article.css }}" type="text/css"/>
+        {% endif %}
+        {% if article.styles %}
+            {% for style in article.styles %}
+                {{ style }}
+            {% endfor %}
+        {% endif %}
+    {% endif -%}
+
     {% if page %}
-    {% if page.css %}
-    <link rel="stylesheet" href="{{ page.css }}" type="text/css"/>
-    {% endif %}
-    {% if page.styles %}{% for style in page.styles %}
-    {{ style }}
-    {% endfor %}{% endif %}
-    {% endif %}
+        {% if page.css %}
+        <link rel="stylesheet" href="{{ page.css }}" type="text/css"/>
+        {% endif -%}
+        {% if page.styles %}
+            {% for style in page.styles %}
+                {{ style }}
+            {% endfor %}
+        {% endif %}
+    {% endif -%}
+
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/theme5.css?v=1.1" type="text/css"/>
-    {% if 'site' in THEME_SETTINGS and 'custom_css' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['custom_css'] %}
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_SETTINGS['site']['custom_css'] }}" type="text/css"/>
+
+    {%- if 'site' in THEME_SETTINGS and 'custom_css' in THEME_SETTINGS['site'] and THEME_SETTINGS['site']['custom_css'] %}
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_SETTINGS['site']['custom_css'] }}" type="text/css"/>
     {% endif %}
+
     <script type="text/javascript" src="{{ SITEURL }}/theme/assets/jquery/jquery-3.7.1.min.js"></script>
-    {% if FEED_ALL_ATOM %}
+
+    {%- if FEED_ALL_ATOM %}
     <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed"/>
-    {% endif %}
-    {% if FEED_ALL_RSS %}
+    {% endif -%}
+
+    {%- if FEED_ALL_RSS %}
     <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed"/>
+    {% endif -%}
+
+    {% if article and article.extra_css_style %}
+        {% set extra_css_style = article.extra_css_style %}
     {% endif %}
-    {% if article and article.extra_css_style %}{% set extra_css_style = article.extra_css_style %}{% endif %}
-    {% if page and page.extra_css_style %}{% set extra_css_style = page.extra_css_style %}{% endif %}
+
+    {% if page and page.extra_css_style %}
+        {% set extra_css_style = page.extra_css_style %}
+    {% endif %}
+
     {% if extra_css_style %}
-        <style>
-            {%- if extra_css_style is iterable and extra_css_style is not string %}
-                {%- for line in extra_css_style -%}
-                    {{ line }}
-                {% endfor %}
-            {% else %}
-                {{ extra_css_style }}
-            {% endif -%}
-        </style>
+    <style>
+        {%- if extra_css_style is iterable and extra_css_style is not string %}
+            {%- for line in extra_css_style -%}
+                {{ line }}
+            {% endfor %}
+        {% else %}
+            {{ extra_css_style }}
+        {% endif -%}
+    </style>
     {% endif %}
 </head>
 <body>
 {% set output_file_parts = output_file.split('/') %}
 {% set sub_site = 'main' %}
 {% set sub_parts = (output_file_parts | length) - 1 %}
-{% if output_file_parts | length > 1 %}
+
+{% if output_file_parts | length > 1 %}
     {% set sub_site = output_file_parts[0] %}
     {% set subsub_site = output_file_parts[-2] %}
 {% endif %}
+
 {% include 'includes/top_menu.html' %}
-{% block breadcrumbs %}
-{% endblock %}
-{% block content %}
-{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}{% endblock %}
+
 {% if 'footer' in THEME_SETTINGS and 'show' in THEME_SETTINGS['footer'] and THEME_SETTINGS['footer']['show'] %}
 {% include 'includes/footer.html' %}
 {% endif %}
 
+<script type="text/javascript" src="{{ SITEURL }}/theme/assets/jquery/jquery.easing.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/assets/bootstrap5/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/theme5.js"></script>
 
-
-
-{% if 0 %}
-
-{% if 'assets' in THEME_SETTINGS and 'colorbox' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['colorbox'] %}
+{%- if 'assets' in THEME_SETTINGS and 'colorbox' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['colorbox'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/colorbox/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.colorbox.js"></script>
-{% endif %}
-<script type="text/javascript" src="{{ SITEURL }}/theme/assets/jquery/jquery.easing.min.js"></script>
-<script type="text/javascript" src="{{ SITEURL }}/theme/assets/bootstrap5/js/bootstrap.min.js"></script>
-{% if 'assets' in THEME_SETTINGS and 'scrollreveal' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['scrollreveal'] %}
+{% endif -%}
+
+{%- if 'assets' in THEME_SETTINGS and 'scrollreveal' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['scrollreveal'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/scrollreveal/scrollreveal.min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.scrollreveal.js"></script>
-{% endif %}
-{% if 'assets' in THEME_SETTINGS and 'anijs' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['anijs'] %}
+{% endif -%}
+
+{%- if 'assets' in THEME_SETTINGS and 'anijs' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['anijs'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/anijs/anijs.min.js"></script>
-{% endif %}
-{% if 'assets' in THEME_SETTINGS and 'fullpage' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fullpage'] %}
+{% endif -%}
+
+{%- if 'assets' in THEME_SETTINGS and 'fullpage' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fullpage'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/fullpage/scrolloverflow.min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/fullpage/jquery.fullpage.min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.fullpage.js"></script>
-{% endif %}
-{% if 'assets' in THEME_SETTINGS and 'timeago' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['timeago'] %}
+{% endif -%}
+
+{%- if 'assets' in THEME_SETTINGS and 'timeago' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['timeago'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/timeago/timeago.min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.timeago.js"></script>
-{% endif %}
-{% if 'assets' in THEME_SETTINGS and 'audio' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['audio'] %}
+{% endif -%}
+
+{%- if 'assets' in THEME_SETTINGS and 'audio' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['audio'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/audio/js/audio.min.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/setup.audio.js"></script>
-{% endif %}
-{% if 'assets' in THEME_SETTINGS and 'highlight' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['highlight'] %}
+{% endif -%}
+
+{%- if 'assets' in THEME_SETTINGS and 'highlight' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['highlight'] %}
 <script type="text/javascript" src="{{ SITEURL }}/theme/assets/highlight/highlight.pack.js"></script>
 <script type="text/javascript">
     document.querySelectorAll('pre code:not([class])').forEach(function($) {$.className = 'no-highlight';});
     hljs.initHighlightingOnLoad();
 </script>
-{% endif %}
+{% endif -%}
+
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/respond.min.js"></script>
-{% if article and article.scripts %}{% for script in article.scripts %}
+
+{% if article and article.scripts %}
+    {% for script in article.scripts %}
 {{ script }}
-{% endfor %}{% endif %}
-{% if page and page.scripts %}{% for script in page.scripts %}
+    {% endfor %}
+{% endif -%}
+
+{% if page and page.scripts %}
+    {% for script in page.scripts %}
 {{ script }}
-{% endfor %}{% endif %}
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/theme5.js"></script>
-{% include 'includes/google_analytics.html' %}
+    {% endfor %}
 {% endif %}
+
+{%- include 'includes/google_analytics.html' -%}
+
 </body>
 </html>

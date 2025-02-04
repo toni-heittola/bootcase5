@@ -31,8 +31,8 @@
 <header class="article-top" style="background-image: url({{header_image}});box-shadow: 0px 1000px rgba(0, 0, 0, 0.5) inset;overflow:hidden;position:relative;">
     <div class="container" style="height:100%;">
         <div class="row" style="height:100%;">
-            <div class="col-md-offset-2 col-md-8 b20" style="height:100%;">
-                <div class="page-heading {% if header_text_align == "right" -%}text-right{%- elif header_text_align == "center"-%}text-center{%- endif -%}" style="height:100%;">
+            <div class="offset-md-2 col-md-8 b20" style="height:100%;">
+                <div class="page-heading {% if header_text_align == "right" -%}text-end{%- elif header_text_align == "center"-%}text-center{%- endif -%}" style="height:100%;">
                     <h2 class="{% if header_text_style == "bold" -%}bold{%- elif header_text_style == "thin"-%}thin{%- endif -%}">News articles</h2>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 {%- set category_data = THEME_SETTINGS['page_substyles']['default'] -%}
             {%- endif -%}
         <div class="row">
-            <div class="col-md-offset-2 col-md-8" style="min-height:100%;padding-left:0px;padding-right:0px;margin-top:10px;margin-bottom:20px;">
+            <div class="offset-md-2 col-md-8" style="min-height:100%;padding-left:0px;padding-right:0px;margin-top:10px;margin-bottom:20px;">
                 <article>
                     <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                     {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
