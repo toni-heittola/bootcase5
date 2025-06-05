@@ -580,3 +580,7 @@ article h2 a:hover {text-decoration: underline;}
 .bg-light-gray {
   background-color: #F7F7F7;
 }
+
+/* sticky-top                 */
+/* ========================== */
+.entry-content > .sticky-top { top: 3em; }
