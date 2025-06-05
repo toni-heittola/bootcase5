@@ -1,3 +1,5 @@
+/* body and html              */
+/* ========================== */
 body {
   /*position: relative;*/ /* For scrollyspy */
   /*padding-top: 45px;*/  /*Account for fixed navbar */
@@ -20,6 +22,13 @@ a .badge{border: 1px solid transparent;}
 a .badge:hover{border: 1px solid #333;}
 
 h1 a, h2 a, h3 a, h4 a {color: black;}
+
+/* hr                         */
+/* ========================== */
+hr {
+    border-color: #FFF;
+}
+
 hr.small {
     max-width: 100px;
     margin: 15px auto;
@@ -559,4 +568,15 @@ pre{
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+/* article                    */
+/* ========================== */
+article h2 a {text-decoration: none;}
+article h2 a:hover {text-decoration: underline;}
+
+/* background                 */
+/* ========================== */
+.bg-light-gray {
+  background-color: #F7F7F7;
 }
