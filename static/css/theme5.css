@@ -36,6 +36,15 @@ hr.small {
     border-color: #FFF;
 }
 
+/* href                       */
+/* ========================== */
+a.text{
+    border-bottom: none !important;
+}
+a.text:hover{
+    border-bottom: 1px dotted !important;
+}
+
 /* entry-content */
 .entry-content {}
 .entry-content p a, .entry-content li a, .link  {
