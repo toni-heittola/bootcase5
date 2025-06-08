@@ -439,7 +439,7 @@ figcaption {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
-/* Label                     */
+/* Label                      */
 /* ========================== */
 .label {
     display: inline;
@@ -462,7 +462,6 @@ figcaption {
 .label-danger {background-color: #d9534f;}
 
 .badge{background-color: #777;}
-.btn-default {color: #333;background-color: #fff;border-color: #ccc;}
 
 /* *-t1 */
 .label-t1{background-color: #337ab7;}
@@ -593,3 +592,28 @@ article h2 a:hover {text-decoration: underline;}
 /* sticky-top                 */
 /* ========================== */
 .entry-content > .sticky-top { top: 3em; }
+
+/* button                     */
+/* ========================== */
+.btn-default {
+    color: #333;
+    background-color:#fff;
+    border-color: #ccc;
+}
+.btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+    padding  : .25rem .4rem;
+    font-size  : .875rem;
+    line-height  : .5;
+    border-radius : .2rem;
+}
+
+
+.btn-group-xs > .btn, .btn-xs:hover {
+
+}
