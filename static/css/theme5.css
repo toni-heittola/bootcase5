@@ -460,6 +460,9 @@ figcaption {
     vertical-align: baseline;
     border-radius: .25em;
 }
+.label-block {
+    display: block;
+}
 
 .label-default {background-color: #777;}
 .label-primary {background-color: #337ab7;}
