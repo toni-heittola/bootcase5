@@ -56,6 +56,46 @@
         distance: '0px',
         scale: 1.0,
     });
+    sr.reveal('.sr-photo-2', {
+        viewFactor: 0.9,
+        duration: 2000,
+        delay: 750,
+        opacity: 0,
+        distance: '0px',
+        scale: 1.0,
+    });
+    sr.reveal('.sr-photo-3', {
+        viewFactor: 0.9,
+        duration: 2000,
+        delay: 1000,
+        opacity: 0,
+        distance: '0px',
+        scale: 1.0,
+    });
+    sr.reveal('.sr-photo-4', {
+        viewFactor: 0.9,
+        duration: 2000,
+        delay: 1250,
+        opacity: 0,
+        distance: '0px',
+        scale: 1.0,
+    });
+    sr.reveal('.sr-photo-5', {
+        viewFactor: 0.9,
+        duration: 2000,
+        delay: 1500,
+        opacity: 0,
+        distance: '0px',
+        scale: 1.0,
+    });
+    sr.reveal('.sr-photo-6', {
+        viewFactor: 0.9,
+        duration: 2000,
+        delay: 1750,
+        opacity: 0,
+        distance: '0px',
+        scale: 1.0,
+    });
     sr.reveal('.sr-fade-logo', {
         viewFactor: 0.9,
         duration: 2000,
@@ -81,7 +121,14 @@
         distance: '100px',
         scale: 1.0,
     });
-
+    sr.reveal('.sr-left-1', {
+        viewFactor: 0.9,
+        duration: 1000,
+        delay: 200,
+        origin: 'left',
+        distance: '100px',
+        scale: 1.0,
+    });
     sr.reveal('.sr-right', {
         viewFactor: 0.9,
         duration: 1000,
