@@ -40,10 +40,23 @@ hr.small {
 /* ========================== */
 a.text{
     border-bottom: none !important;
+    text-decoration: none !important;
 }
 a.text:hover{
     border-bottom: 1px dotted !important;
+    text-decoration: none !important;
 }
+.link-icon{
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/*a h1, a h2, a h3, a h4, a h5, a h6, a .h1, a .h2, a .h3, a .h4, a .h5, a .h6{
+    color: rgb(51,51,51);
+}
+a:hover h1, a:hover h2, a:hover h3, a:hover h4, a:hover h5, a:hover h6, a:hover .h1, a:hover .h2, a:hover .h3, a:hover .h4, a:hover .h5, a:hover .h6{
+    color: rgb(51,51,51);
+}*/
 
 /* entry-content */
 .entry-content {}
@@ -82,7 +95,7 @@ a.text:hover{
 .navbar-nav > li > a {line-height: 32px;}
 .navbar-nav > li.nav-item.active > a.nav-link {
     color: #FFFFFF;
-    background-color: #080808;
+    /*background-color: #080808;*/
 }
 
 .navbar-nav > li.nav-item > a {
@@ -132,12 +145,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height: 1.1;
     color: inherit;
     /*margin-top: 0;*/
-}
-a h1, a h2, a h3, a h4, a h5, a h6, a .h1, a .h2, a .h3, a .h4, a .h5, a .h6{
-    color: rgb(51,51,51);
-}
-a:hover h1, a:hover h2, a:hover h3, a:hover h4, a:hover h5, a:hover h6, a:hover .h1, a:hover .h2, a:hover .h3, a:hover .h4, a:hover .h5, a:hover .h6{
-    color: rgb(51,51,51);
 }
 
 /* navbar-dropdowns           */
@@ -686,4 +693,75 @@ article h2 a:hover {text-decoration: underline;}
         margin-top: 6px;
         margin-bottom: 6px;
     }
+}
+
+
+/* social buttons             */
+/* ========================== */
+.social-buttons img, .social-button img{
+  border: none !important;
+}
+ul.social-buttons {
+    margin-bottom: 0;
+}
+ul.social-buttons li,
+.social-button {
+  padding-left:  0;
+  padding-right: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ul.social-buttons li a,
+.social-button a{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  outline: 0;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  text-align: center;
+  vertical-align: middle;
+}
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active,
+.social-button a:active,
+.social-button a:focus,
+.social-button a:hover{
+    color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(240, 95, 64, 0.75);
+}
+
+/* link-container             */
+/* ========================== */
+.link-container .row, .link-container-dark .row {
+    overflow-x: visible;
+    margin-right: 0;
+}
+.link-container .label,.link-container-dark .label, .link-container .label-muted, .link-container-dark .label-muted {
+    display: block;
+    color: rgba(255, 255, 255, 0.75);
+    border-top: 2px solid rgba(255, 255, 255, 0.1); /*rgba(240, 95, 64, 0.5);*/
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 0;
+}
+.link-container-dark .label {
+    color: rgba(0, 0, 0, 0.75);
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+.link-container .label-muted {
+    border: none;
+}
+.link-container-dark .label-muted {
+    color: rgba(0, 0, 0, 0.75);
+    border: none;
 }
