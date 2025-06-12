@@ -59,7 +59,7 @@
     sr.reveal('.sr-photo-2', {
         viewFactor: 0.9,
         duration: 2000,
-        delay: 750,
+        delay: 650,
         opacity: 0,
         distance: '0px',
         scale: 1.0,
@@ -67,7 +67,7 @@
     sr.reveal('.sr-photo-3', {
         viewFactor: 0.9,
         duration: 2000,
-        delay: 1000,
+        delay: 800,
         opacity: 0,
         distance: '0px',
         scale: 1.0,
@@ -75,7 +75,7 @@
     sr.reveal('.sr-photo-4', {
         viewFactor: 0.9,
         duration: 2000,
-        delay: 1250,
+        delay: 950,
         opacity: 0,
         distance: '0px',
         scale: 1.0,
@@ -83,7 +83,7 @@
     sr.reveal('.sr-photo-5', {
         viewFactor: 0.9,
         duration: 2000,
-        delay: 1500,
+        delay: 1100,
         opacity: 0,
         distance: '0px',
         scale: 1.0,
@@ -91,7 +91,7 @@
     sr.reveal('.sr-photo-6', {
         viewFactor: 0.9,
         duration: 2000,
-        delay: 1750,
+        delay: 1250,
         opacity: 0,
         distance: '0px',
         scale: 1.0,
