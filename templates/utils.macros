@@ -77,7 +77,7 @@
     {%- endif -%}
 
     {%- if 'divider' in item_dict and item_dict['divider'] -%}
-    <li class="nav-item divider" role="presentation"></li>
+    <li class="nav-item divider dropdown-divider" role="presentation"></li>
 
     {%- elif 'header' in item_dict and item_dict['header'] -%}
     <li class="nav-link disabled subheader" {% if tooltip %} data-bs-toggle="tooltip" data-bs-placement="{{tooltip_placement}}" title="{{tooltip_text}}"{% endif %}>
