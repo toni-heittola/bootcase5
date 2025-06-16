@@ -431,6 +431,8 @@ figcaption {
 .blur{-webkit-filter: blur(5px);-moz-filter: blur(5px);-o-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);}
 .darken{filter: brightness(90%);}
 .darken:hover{filter: brightness(100%);}
+.darken2{filter: brightness(80%) contrast(114%)}
+.darken2:hover{filter: filter: brightness(100%) contrast(114%)}
 .invert{-webkit-filter: invert(1);filter: invert(1);}
 .desaturate-invert{-webkit-filter:grayscale(1) invert(1);filter:grayscale(1) invert(1);}
 
