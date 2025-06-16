@@ -13,7 +13,8 @@ site:
 
 # Assets settings
 assets:
-  fontawesome: true
+  #fontawesome: true
+  fontawesome6: true
   dcaseicons: false
   academicons: false
   colorbox: false

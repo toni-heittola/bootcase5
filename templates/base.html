@@ -36,6 +36,14 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/font-awesome/css/font-awesome.min.css" type="text/css"/>
     {% endif -%}
 
+    {%- if 'assets' in THEME_SETTINGS and 'fontawesome4' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fontawesome4'] %}
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    {% endif -%}
+
+    {%- if 'assets' in THEME_SETTINGS and 'fontawesome6' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['fontawesome6'] %}
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/fontawesome6/css/all.min.css" type="text/css"/>
+    {% endif -%}
+
     {%- if 'assets' in THEME_SETTINGS and 'academicons' in THEME_SETTINGS['assets'] and THEME_SETTINGS['assets']['academicons'] %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/assets/academicons/css/academicons.min.css" type="text/css"/>
     {% endif -%}
