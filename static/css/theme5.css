@@ -747,6 +747,14 @@ ul.social-buttons li a,
   text-align: center;
   vertical-align: middle;
 }
+ul.social-buttons-sm li a,
+.social-button-sm a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  font-size: 13px;
+  line-height: 25px;
+}
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active,
