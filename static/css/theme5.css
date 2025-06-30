@@ -105,7 +105,9 @@ a:hover h1, a:hover h2, a:hover h3, a:hover h4, a:hover h5, a:hover h6, a:hover 
     padding-left: 9px !important;
     padding-right: 8px !important;
 }
-
+.dropdown-menu > .subheader > a {
+    padding-left: 10px !important;
+}
 .navbar-tighter > .subheader {
     padding-left: 0px !important;
 }
