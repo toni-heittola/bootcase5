@@ -1,15 +1,13 @@
 /* body and html              */
 /* ========================== */
 body {
-  /*position: relative;*/ /* For scrollyspy */
-  /*padding-top: 45px;*/  /*Account for fixed navbar */
-  /*height: 100%;*/
   width: 100%;
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 html {
   width: 100%;
   height: 100%;
+  scroll-padding-top: 100px;
 }
 
 /* elements                   */
